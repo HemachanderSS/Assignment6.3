@@ -1,0 +1,48 @@
+Pig script commands:
+1.LOAD:
+	It is used to load the data from the file system.
+	eg:
+	relation1 = load 'user/acadgild/input' using PigStorage(',') as (id:int, name:chararray,
+sal:int);
+
+
+2.STORE:
+	It is used to store data into the file system.
+	eg:
+	store relation1 into 'user/acadgild/relation1';
+
+
+3.DUMP:
+	It displays the result to the screen.
+	eg:
+	dump relation1;
+
+
+4.FOREACH:
+	It iterate the tuples of a relation, generating a data transformation.
+	eg:
+	relation2 = foreach relation1 generate id;
+	dump relation2;
+
+5.FILTER:
+	It selects a set of tuples from a relation based on condition.
+	eg:
+	relation3 = filter relation1 by sal>2000;
+	dump relation3;
+
+6.GROUP BY:
+	It groups the data in one or more relations.
+	eg:
+	relation4 = group relation1 by id;
+	dump relation4;
+
+7.ORDER BY:
+	It sorts a relation based on one or more fields.
+	eg:
+	relation5 = order relation1 by id desc;
+	dump relation5;
+
+8.DESCRIBE:
+	It returns the structure of an alias.
+	eg:
+	describe relation1; 	   
